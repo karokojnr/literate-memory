@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/karokojnr/literate-memory/database"
+	"github.com/karokojnr/literate-memory/internal/database"
 )
 
 type apiConfig struct {
@@ -38,6 +38,8 @@ func main() {
 	apiRouter.Post("/chirps", apiCfg.handlerChirpsCreate)
 	apiRouter.Get("/chirps", apiCfg.handlerChirpsRetrieve)
 	apiRouter.Get("/chirps/{chirpID}", apiCfg.handlerChirpRetrieve)
+	apiRouter.Post("/users", apiCfg.handlerUsersCreate)
+	apiRouter.Post("/login", apiCfg.handlerLogin)
 	router.Mount("/api", apiRouter)
 
 	adminRouter := chi.NewRouter()
