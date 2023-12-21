@@ -14,6 +14,7 @@ type Chirp struct {
 	ID       int    `json:"id"`
 	AuthorID int    `json:"author_id"`
 	Body     string `json:"body"`
+	
 }
 
 func (cfg *apiConfig) handlerChirpsCreate(w http.ResponseWriter, r *http.Request) {
